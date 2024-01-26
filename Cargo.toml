@@ -6,4 +6,4 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-crates-index = { version = "2.5.0", features = [ "git" ] }
+crates-index = { version = "=2.5.0", features = [ "git-https" ] }
