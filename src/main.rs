@@ -11,12 +11,12 @@ fn main() {
             c.versions().iter().map(|v| v.version()).collect::<Vec<_>>()
         );
     }
-    {
-        let index = SparseIndex::new_cargo_default().unwrap();
-        let c = index.crate_from_cache("gitoxide").unwrap();
-        println!(
-            "{:#?}",
-            c.versions().iter().map(|v| v.version()).collect::<Vec<_>>()
-        );
-    }
+    // {
+    //     let index = SparseIndex::new_cargo_default().unwrap();
+    //     let c = index.crate_from_cache("gitoxide").unwrap();
+    //     println!(
+    //         "{:#?}",
+    //         c.versions().iter().map(|v| v.version()).collect::<Vec<_>>()
+    //     );
+    // }
 }
