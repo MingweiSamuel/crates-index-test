@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Install nightly toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+
+      - name: Run cargo run
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
